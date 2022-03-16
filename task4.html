@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+</head>
+
+<body>
+    <script>
+        let truePassword = "7123";
+        while (true)
+            if (prompt("Введите пароль", "") == truePassword)
+                break;
+            else
+                alert("Неправильный пароль!")
+        alert("Пароль правильный!!!")
+
+        let base = 10;
+        let x = parseInt(prompt("Введите целое число X", ""), base);
+        let y = parseInt(prompt("Введите целое число Y", ""), base);
+        if (x == y) alert("Введенные числа равны");
+        if (x > y) alert("X больше Y");
+        if (x < y) alert("Y больше X");
+
+    </script>
+</body>
+
+</html>
