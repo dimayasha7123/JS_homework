@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+</head>
+
+<body>
+    <script>
+        let rowCount = parseInt(prompt("Сколько степеней двойки хотите?", 11));
+    </script>
+    <table>
+        <tr>
+            <th>Степень</th>
+            <th>Результат</th>
+        </tr>
+        <script>
+            for (let i = 0; i < rowCount; ++i) {
+                document.writeln("<tr>");
+                document.writeln("<th>2<sup>" + i + "</sup></th>");
+                document.writeln("<th>" + 2 ** i + "</th>");
+                document.writeln("</tr>");
+            }
+        </script>
+    </table>
+</body>
+
+</html>
