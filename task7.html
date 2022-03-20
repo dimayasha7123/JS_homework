@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 7</title>
+
+    <script>
+        function printSubjects() {
+            let subjects = new Array("Математика", "Информатика", "Физика", "Химия", "Программирование для самых маленьких", "Литература", "Русский язык", "Культуроведение");
+            let normalSubjects = subjects.slice(0, 5);
+            let boringSubjects = subjects.slice(5, subjects.length);
+            document.writeln(normalSubjects);
+            document.writeln(boringSubjects);
+        }
+    </script>
+
 </head>
+
 <body>
     <script>
-
+        printSubjects();
     </script>
 </body>
+
 </html>
