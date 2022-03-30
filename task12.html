@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 12</title>
+</head>
+
+<body>
+    <script>
+        function beforeClick() {
+            sure = confirm("Вы уверены что хотите выучить лучший язык программирования?");
+            while (!sure) {
+                sure = confirm("Подумайте еще раз, пожалуйста. Может все-таки стоит попробовать?");
+            }
+        }
+    </script>
+    <a href="file:///C:\Users\dimya\Google Диск\Книги\ПИнж\manuals and labs\879 (javascript).pdf"
+        onclick="beforeClick()" download>
+        Выучить лучший язык программирования бесплатно без смс и регистрации
+    </a>
+    <hr>
+    <a onmouseover="body.style.background='red'" onmouseout="body.style.background='white'">✦✦✦Магия✦✦✦</a>
+</body>
+
+</html>
