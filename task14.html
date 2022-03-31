@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Task 14</title>
+</head>
+
+<body>
+    <script>
+        function validate() {
+            let inputs = document.getElementById("form1").getElementsByTagName("input");
+            check = true;
+            let password = "";
+            for (let elem of inputs) {
+                let textForError = "";
+                switch (elem.id) {
+                    case "name":
+
+                        if (elem.value.length == 0) {
+                            textForError = "Поле должно быть заполнено";
+                            check = false;
+                        }
+                        document.getElementById("nameError").innerText = textForError;
+                        break;
+
+                    case "password":
+
+                        if (elem.value.length == 0) {
+                            textForError = "Поле должно быть заполнено";
+                            check = false;
+                        }
+                        else if (elem.value.length <= 4) {
+                            textForError = "Пароль должен быть длиннее 4 символов";
+                            check = false;
+                        }
+                        password = elem.value;
+                        document.getElementById("passwordError").innerText = textForError;
+                        break;
+
+                    case "passwordConfirm":
+
+                        if (elem.value.length == 0) {
+                            textForError = "Поле должно быть заполнено";
+                            check = false;
+                        }
+                        else if (elem.value != password) {
+                            textForError = "Пароли не совпадают";
+                            check = false;
+                        }
+                        document.getElementById("passwordConfirmError").innerText = textForError;
+                        break;
+
+                    case "email":
+
+                        if (elem.value.length == 0) {
+                            textForError = "Поле должно быть заполнено";
+                            check = false;
+                        }
+                        else if (!elem.value.includes("@")) {
+                            textForError = "Адрес введен неверно";
+                            check = false;
+                        }
+                        document.getElementById("emailError").innerText = textForError;
+                        break;
+                }
+            }
+
+            let message = document.getElementById("message");
+            let textForError = "";
+            if (message.value.length == 0) {
+                textForError = "Поле должно быть заполнено";
+                check = false;
+            }
+            else if (message.value.length <= 10) {
+                textForError = "Сообщение должно быть длиннее 10 символов";
+                check = false;
+            }
+            document.getElementById("messageError").innerText = textForError;
+
+            if (check) alert("Данные введены верно! Вы справились с этой нелегкой задачей");
+            return check;
+        }
+    </script>
+    <form id="form1" onsubmit="return validate()">
+
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" name="name"></input>
+        <br>
+        <label class="labelError" id="nameError"></label>
+        <br>
+        <!-- не пусто -->
+
+        <label for="password">Пароль </label>
+        <input type="password" id="password" name="password"></input>
+        <br>
+        <label class="labelError" id="passwordError"></label>
+        <br>
+        <!-- не пусто и больше 4 символов -->
+
+        <label for="password_confirm">Подтверждение пароля </label>
+        <input type="password" id="passwordConfirm" name="passwordConfirm"></input>
+        <br>
+        <label class="labelError" id="passwordConfirmError"></label>
+        <br>
+        <!-- не пусто и совпадает с паролем -->
+
+        <label for="email">Электронный адрес </label>
+        <input type="text" id="email" name="email"></input>
+        <br>
+        <label class="labelError" id="emailError"></label>
+        <br>
+        <!-- не пусто и содержит @ -->
+
+        <label for="topic">Тема сообщения </label>
+        <input type="text" id="topic" name="topic"></input>
+        <br>
+        <label class="labelError" id="topicError"></label>
+        <br>
+        <!-- ничего не сказано -->
+
+        <label for="message">Сообщение </label>
+        <textarea id="message" name="message" rows="10" cols="30"></textarea>
+        <br>
+        <label class="labelError" id="messageError"></label>
+        <br>
+        <!-- не пусто и содержит более 10 символов -->
+
+        <input type="submit" id="submit" name="submit" value="Отправить"></input>
+        <input type="reset" id="reset" name="reset" value="Очистить"></input>
+
+    </form>
+</body>
+
+</html>
