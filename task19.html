@@ -5,28 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Task 18</title>
+    <title>Task 19</title>
 </head>
 
 <body>
-    <div id="animText" style="position:absolute;">
-        <a>Я поехал</a>
+    <div id="animText" style="position:absolute; left: 800px;">
+        <a>Я поехал по диагонали налево вниз</a>
     </div>
 
     <script>
         let start = Date.now();
         let timer = setInterval(function () {
             let timePassed = Date.now() - start;
-            if (timePassed >= 2000) {
-                animText.innerText = "Я приехал";
+            if (timePassed >= 2500) {
+                animText.innerText = "Я приехал в центр плюс/минус километр";
                 clearInterval(timer);
                 return;
             }
             draw(timePassed);
         }, 20)
         function draw(timePassed) {
-            animText.style.top = timePassed / 10 + "px";
+            animText.style.top = timePassed / 8 + "px";
+            animText.style.left = 800 - timePassed / 8 + "px";
         }
     </script>
 </body>
