@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Task 18</title>
+</head>
+
+<body>
+    <div id="animText" style="position:absolute;">
+        <a>Я поехал</a>
+    </div>
+
+    <script>
+        // насколько я понял, анимации в мануале устарели, так что я сделал через js движение текста вниз
+        let start = Date.now();
+        let timer = setInterval(function () {
+            let timePassed = Date.now() - start;
+            if (timePassed >= 2000) {
+                animText.innerText = "Я приехал";
+                clearInterval(timer);
+                return;
+            }
+            draw(timePassed);
+        }, 20)
+        function draw(timePassed) {
+            animText.style.top = timePassed / 10 + "px";
+        }
+    </script>
+</body>
+
+</html>
