@@ -11,9 +11,11 @@
 
 <body>
     <script>
+        // мдаааа, ну я кода надублировал конечно
         function validate() {
             let inputs = document.getElementById("form1").getElementsByTagName("input");
             check = true;
+            focusSetted = false;
             let password = "";
             for (let elem of inputs) {
                 let textForError = "";
@@ -23,6 +25,10 @@
                         if (elem.value.length == 0) {
                             textForError = "Поле должно быть заполнено";
                             check = false;
+                            if (!focusSetted) {
+                                focusSetted = true;
+                                elem.focus()
+                            }
                         }
                         document.getElementById("nameError").innerText = textForError;
                         break;
@@ -32,10 +38,18 @@
                         if (elem.value.length == 0) {
                             textForError = "Поле должно быть заполнено";
                             check = false;
+                            if (!focusSetted) {
+                                focusSetted = true;
+                                elem.focus()
+                            }
                         }
                         else if (elem.value.length <= 4) {
                             textForError = "Пароль должен быть длиннее 4 символов";
                             check = false;
+                            if (!focusSetted) {
+                                focusSetted = true;
+                                elem.focus()
+                            }
                         }
                         password = elem.value;
                         document.getElementById("passwordError").innerText = textForError;
@@ -46,10 +60,18 @@
                         if (elem.value.length == 0) {
                             textForError = "Поле должно быть заполнено";
                             check = false;
+                            if (!focusSetted) {
+                                focusSetted = true;
+                                elem.focus()
+                            }
                         }
                         else if (elem.value != password) {
                             textForError = "Пароли не совпадают";
                             check = false;
+                            if (!focusSetted) {
+                                focusSetted = true;
+                                elem.focus()
+                            }
                         }
                         document.getElementById("passwordConfirmError").innerText = textForError;
                         break;
@@ -59,10 +81,18 @@
                         if (elem.value.length == 0) {
                             textForError = "Поле должно быть заполнено";
                             check = false;
+                            if (!focusSetted) {
+                                focusSetted = true;
+                                elem.focus()
+                            }
                         }
                         else if (!elem.value.includes("@")) {
                             textForError = "Адрес введен неверно";
                             check = false;
+                            if (!focusSetted) {
+                                focusSetted = true;
+                                elem.focus()
+                            }
                         }
                         document.getElementById("emailError").innerText = textForError;
                         break;
@@ -74,10 +104,18 @@
             if (message.value.length == 0) {
                 textForError = "Поле должно быть заполнено";
                 check = false;
+                if (!focusSetted) {
+                    focusSetted = true;
+                    elem.focus()
+                }
             }
             else if (message.value.length <= 10) {
                 textForError = "Сообщение должно быть длиннее 10 символов";
                 check = false;
+                if (!focusSetted) {
+                    focusSetted = true;
+                    elem.focus()
+                }
             }
             document.getElementById("messageError").innerText = textForError;
 
